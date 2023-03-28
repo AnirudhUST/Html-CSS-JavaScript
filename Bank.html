@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="language">
+    <head><title>Ust bank details</title>
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+            
+            body {
+              font-family: Arial, Helvetica, sans-serif;
+              background-color: #a5a6a7;
+            }
+            
+            /* Style the header */
+            header {
+              background-color: #ffffff;
+              padding: 20px;
+              text-align: center;
+              font-size: 35px;
+              color: rgb(12, 11, 11);
+            }
+            
+            /* Create two columns/boxes that floats next to each other */
+            nav {
+              float: center;
+              width: 100%;
+              height: 30px; /* only for demonstration, should be removed */
+              background: #414040;
+              padding: 20px;
+              text-align: center;
+            }
+            
+            nav a{
+                color: #e6e2e2;
+                text-decoration:none;
+                padding: 10px;
+            }
+            
+            article {
+              float: left;
+              padding: 20px;
+              width: 70%;
+              background-color: #f1f1f1;
+              height: 300px; /* only for demonstration, should be removed */
+            }
+            
+            /* Clear floats after the columns */
+            section::after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            
+            /* Style the footer */
+            footer {
+              background-color: #777;
+              padding: 10px;
+              text-align: center;
+              color: rgb(17, 17, 17);
+            }
+            
+            /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+            @media (max-width: 600px) {
+              nav, article {
+                width: 100%;
+                height: auto;
+              }
+            }
+            </style>
+            </head>
+    <body >
+        <header>
+            <img src="ust.jpg.webp" width="100" height="100" align="left">
+            <H1 style="text-align:center"><B>Bank Details</B></H1>
+          </header>
+          
+          <section>
+            <nav>
+              <b><a href="homepage.html">Home</a>
+                <a href="#">Bank Details</a>
+                <a href="#FOOT">Contact as</a></b>
+              
+            </nav></section>
+     
+    <form id="interest-form" align="center">
+        <body>
+            <p>The current date is:</p>
+            <p id="current-date"></p>
+        
+            <script>
+              var currentDate = new Date();
+              document.getElementById("current-date").innerHTML = currentDate;
+            </script>
+
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="Name"><br>
+        <label for="aadharnumber">Aadharnumber:</label><br>
+        <input type="text" id="aadhar" name="Aadharnumber" pattern="[0-9]{12}" required><br>
+        <label for="pancard">Pancard Number:</label><br>
+        <input type="text" id="pan" name="Pancard"  required><br>
+        <label for="branch">Branch:</label><br>
+        <input type="text" id="branch" name="Branch"><br>
+        <label for="amount">Principle Amount:</label><br>
+        <input type="number" id="amt" name="Amount"><br>
+        <label for="branch">Time:</label><br>
+        
+        <input type="number" id="time" name="time" required><br>
+        
+        <label for="rate">Rate:</label>
+        <select id="rate" name="Rate">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" >3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        </select><br><br>
+        <button type="submit" value="Submit" onclick="calculateInterest()">Calculate</button>
+      </form>
+        <p id ="interest-result"></p>
+      
+      <script>
+        
+
+   function calculateInterest() {
+  // Get form input values
+  const principal = document.getElementById("amt").value;
+  const rate = document.getElementById("rate").value;
+  const time = document.getElementById("time").value;
+  var panInput = document.getElementById("pan");
+  var aadhar = document.getElementById("aadhar").value;
+  var aadhaarRegex = /^\d{12}$/;
+  var name = document.getElementById("name").value;
+var panRegex = /[A-Z]{5}[0-9]{4}[A-Z]{1}/;
+        if (!panRegex.test(panInput.value)) {
+          alert("Invalid PAN number. Please enter a valid PAN number.");
+          panInput.focus();
+        }
+        if (!aadhaarRegex.test(aadhar)) {
+          alert("Invalid Aadhaar number. Please enter a 12-digit number.");
+          return false;
+        }
+
+  // Calculate interest
+  const interest = (principal * rate * time) / 100;
+ 
+	
+
+	// Display the form data on the page
+	// document.getElementById("form-data").innerHTML = "<p>Name: " + name + "</p><p>Aadhar No: " + aadhar + "</p><p>PAN number: " + panInput + "</p>";
+  
+
+  // Display input values and interest
+  const resultElement = document.getElementById("interest-result");
+  resultElement.innerHTML = `Input values: Name = ${name}, Principal amount = ${principal}, Interest rate = ${rate}, Time period = ${time}<br>Interest = ${interest}`;
+}
+      </script>
+      <!-- <footer id="FOOT">
+        <p><i><b>Contact As</b></i></p>
+        <img src="PHONE.jpg" width="30" height="40"> 9745896745<br>
+        <div></div><img src="home.jpg" width="30" height="40"> TechnoPark Phase II, Service Rd, Kulathoor, Thiruvananthapuram, Kerala 695583</div>
+      </footer> -->
+      
+     
+
+    </body>
+</html>

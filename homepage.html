@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head><title>ust official page</title><style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: #dbd5d2;
+          
+        }
+        
+        /* Style the header */
+        header {
+            background-color: #ffffff;
+          padding: 20px;
+          text-align: center;
+          font-size: 35px;
+          color: rgb(12, 11, 11);
+        }
+        
+        /* Create two columns/boxes that floats next to each other */
+        nav {
+          float: center;
+          width: 100%;
+          height: 30px; /* only for demonstration, should be removed */
+          background: #8f9190;
+          padding: 20px;
+          text-align: center;
+        }
+        
+        nav a{
+            color: #e6e2e2;
+            text-decoration:none;
+            padding: 10px;
+        }
+        
+        article {
+          float: left;
+          padding: 20px;
+          width: 70%;
+          background-color: #f1f1f1;
+          height: 300px; /* only for demonstration, should be removed */
+        }
+        
+        /* Clear floats after the columns */
+        section::after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Style the footer */
+        footer {
+          background-color: #ffffff;
+          padding: 10px;
+          text-align: center;
+          color: rgb(17, 17, 17);
+        }
+        
+        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        @media (max-width: 600px) {
+          nav, article {
+            width: 100%;
+            height: auto;
+          }
+        }
+        </style></head>
+    <body  >
+        <header>
+            <img src="ust.jpg.webp" width="100" height="100" align="left">
+            <H1 style="text-align:center"><B>Welcome to UST</B></H1>
+          </header>
+          
+          <section>
+            <nav>
+              <b><a href="#">Home</a>
+                <a href="Bank.html">Bank Details</a>
+                <a href="#FOOT">Contact as</a></b>
+              
+            </nav></section>
+            <img id="av" src="Campus_photograph_in_Trivandrum.jpg" alt="my background-image" align="center" width="100%" height="500">
+            <div>
+              <b>About</b>  
+               <div>UST is a global digital transformation solutions provider.
+               For more than 20 years, UST has worked side by side with the world’s best companies to make a real impact through transformation.
+                Powered by technology, inspired by people and led by purpose, UST partners with their clients from design to operation. 
+               With deep domain expertise and a future-proof philosophy, UST embeds innovation and agility into their clients’ organizations.
+                With over 30,000 employees in 30 countries, UST builds for boundless impact—touching billions of lives in the process.
+            </div>
+        </div>
+       
+              
+            
+            <footer id="FOOT">
+                <p><i><b>Contact As</b></i></p>
+                
+                <div><img src="home.jpg" width="30" height="40"><div>UST Global, 
+                TechnoPark Phase II, Service Rd, Kulathoor, Thiruvananthapuram,
+                 Kerala 695583</div>
+                 <img src="PHONE.jpg" width="50" height="70"> <div>9745896745<br></div>
+              </footer>
+    </body>
+</html>
